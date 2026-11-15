@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stowarzyszenie Ochrony Środowiska i Dziedzictwa Gminy Łęki Szlacheckie</title>
+<meta name="description" content="Działamy na rzecz ochrony środowiska, zasobów wodnych oraz dziedzictwa przyrodniczego i kulturowego gminy Łęki Szlacheckie.">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ===== Kolory i czcionki (z logo) ===== */
+:root{
+  --forest:#2d5a1b; --leaf:#7fb23a; --sun:#f6c445;
+  --paper:#fffef9; --ink:#262a22; --mist:#eef4e4;
+  --display:"Bricolage Grotesque",Georgia,serif;
+  --body:"Nunito Sans",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;font:18px/1.65 var(--body);color:var(--ink);background:var(--paper)}
+a{color:var(--forest)}
+a:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0 0 .5em;color:var(--forest)}
+h2{font-size:clamp(1.8rem,4vw,2.5rem)}
+#o-nas h2,#aktualnosci h2,#kontakt h2{text-transform:uppercase;letter-spacing:.01em}
+p{max-width:62ch;margin:0 0 1em}
+
+nav{display:flex;flex-wrap:wrap;gap:8px 28px;align-items:center;justify-content:space-between;padding:16px 0}
+nav .logo{display:flex;align-items:center;gap:12px;font:800 .95rem/1.2 var(--display);color:var(--forest);text-decoration:none;max-width:26em}
+nav .logo img{width:52px;height:52px}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+nav ul a{font-weight:700;text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}
+nav ul a:hover{border-color:var(--leaf)}
+
+.hero{display:grid;grid-template-columns:1fr auto;gap:16px 32px;align-items:center;padding:24px 0 56px}
+.hero h1{font-size:clamp(1.6rem,4.2vw,2.95rem);font-weight:800;letter-spacing:.01em;text-transform:uppercase}
+.hero p{font-size:1.2rem;max-width:44ch}
+.hero h1{margin:0}
+.hero .lead{grid-column:1/-1}
+.crest{width:120px;align-self:center}
+.crest svg,.crest img{display:block;width:100%;height:auto}
+.crest svg{margin-bottom:1px}
+.btn{display:inline-block;background:var(--forest);color:#fff;font-weight:700;padding:14px 26px;border-radius:999px;text-decoration:none;margin:6px 12px 6px 0}
+.btn.alt{background:transparent;color:var(--forest);box-shadow:inset 0 0 0 2px var(--forest)}
+.btn:hover{background:var(--leaf);color:var(--ink);box-shadow:none}
+
+.field{display:block;width:100%;height:70px;background:var(--paper)}
+
+section{padding:72px 0}
+.about{display:grid;gap:40px;grid-template-columns:1.3fr 1fr;align-items:start}
+.facts{background:var(--sun);border-radius:28px;padding:28px 30px}
+.facts h3{font-size:1.3rem;color:var(--forest);text-transform:uppercase;letter-spacing:.01em}
+.facts ul{margin:0;padding-left:1.1em}
+.facts li{margin-bottom:.5em}
+
+.news{background:var(--mist)}
+.post{background:var(--paper);border-radius:24px;padding:32px 34px;margin-top:24px}
+.post h3{font-size:clamp(1.4rem,3vw,1.9rem)}
+.post h4{font-family:var(--display);color:var(--forest);font-size:1.2rem;margin:1.6em 0 .5em}
+.post ul{padding-left:1.2em;max-width:62ch;margin:0 0 1em}
+.post li{margin-bottom:.6em}
+.post .motto{font:800 1.2rem/1.3 var(--display);color:var(--forest);border-left:6px solid var(--sun);padding-left:16px;margin:1.6em 0 .4em}
+.post .sign{color:#5a6350;font-size:.95rem;margin:0}
+.empty{margin-top:28px}
+
+.contact{display:grid;gap:36px;grid-template-columns:1fr 1fr}
+.contact dl{margin:0}
+.contact dt{font-weight:700;color:var(--forest)}
+.contact dd{margin:0 0 1em}
+
+footer{background:var(--forest);color:#e6efdc;padding:28px 0;font-size:.95rem;text-align:center}
+footer a{color:var(--sun)}
+
+@media (max-width:760px){
+  .about,.contact{grid-template-columns:1fr}
+  .hero{gap:12px 16px}
+  .crest{width:100px}
+  .br{display:none}
+  section{padding:52px 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="Menu główne">
+      <a class="logo" href="#top"><img src="logo.png" alt=""><span>Stowarzyszenie Ochrony Środowiska<br>i Dziedzictwa Gminy Łęki Szlacheckie</span></a>
+      <ul>
+        <li><a href="#o-nas">O nas</a></li>
+        <li><a href="#aktualnosci">Aktualności</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div class="hero" id="top">
+      <h1>Chronimy środowisko<br class="br"> i dziedzictwo naszej gminy</h1>
+      <div class="crest">
+        <svg viewBox="0 0 120 17" role="img" aria-label="Łęki Szlacheckie"><text x="0" y="12.5" textLength="120" lengthAdjust="spacingAndGlyphs" font-size="14" font-weight="800" fill="#000" style="font-family:var(--display)">ŁĘKI SZLACHECKIE</text></svg>
+        <img src="herb.png" alt="Herb gminy Łęki Szlacheckie">
+      </div>
+      <div class="lead">
+        <p>Działamy na rzecz ochrony środowiska, zasobów wodnych oraz dziedzictwa przyrodniczego i kulturowego gminy Łęki Szlacheckie.</p>
+        <a class="btn" href="#aktualnosci">Zobacz aktualności</a>
+        <a class="btn alt" href="#kontakt">Działaj z nami</a>
+      </div>
+    </div>
+  </div>
+  <svg class="field" viewBox="0 0 1000 70" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 70V40C200 0 400 10 600 30S900 50 1000 20V70z" fill="#7fb23a"/>
+    <path d="M0 70V55C250 25 450 40 650 50S900 55 1000 40V70z" fill="#2d5a1b"/>
+  </svg>
+</header>
+
+<main>
+  <section id="o-nas">
+    <div class="wrap about">
+      <div>
+        <h2>O nas</h2>
+        <p>Działamy na rzecz ochrony środowiska, zasobów wodnych oraz dziedzictwa przyrodniczego i kulturowego gminy Łęki Szlacheckie. Angażujemy mieszkańców w sprawy ważne dla przyszłości naszej gminy.</p>
+      </div>
+      <aside class="facts">
+        <h3>Na czym nam zależy</h3>
+        <ul>
+          <li>ochrona środowiska</li>
+          <li>ochrona zasobów wodnych</li>
+          <li>dziedzictwo przyrodnicze i kulturowe</li>
+          <li>zaangażowanie mieszkańców</li>
+          <li>dobra, bezpieczna przyszłość</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="news" id="aktualnosci">
+    <div class="wrap">
+      <h2>Aktualności</h2>
+      <p>Najnowsze informacje o naszych działaniach publikujemy też na profilu na Facebooku.</p>
+      <!--
+        Aby dodać kolejny wpis, skopiuj cały blok <article class="post"> i wklej go NAD poprzednim.
+      -->
+      <article class="post">
+        <h3>Witamy na oficjalnej stronie naszego stowarzyszenia!</h3>
+        <p><strong>Szanowni Mieszkańcy Gminy Łęki Szlacheckie!</strong></p>
+        <p>Z przyjemnością informujemy, że w grudniu 2025 roku zostało zarejestrowane Stowarzyszenie Ochrony Środowiska i Dziedzictwa Gminy Łęki Szlacheckie.</p>
+        <p>Nasze stowarzyszenie powstało z troski o środowisko naturalne, zasoby wodne, lokalne dziedzictwo przyrodnicze i kulturowe oraz jakość życia mieszkańców naszej gminy.</p>
+
+        <h4>Nasze najważniejsze cele</h4>
+        <ul>
+          <li>Ochrona przyrody, zasobów wodnych, lasów i krajobrazu naszej gminy.</li>
+          <li>Monitorowanie inwestycji i przedsięwzięć mogących oddziaływać na środowisko i warunki życia mieszkańców.</li>
+          <li>Informowanie lokalnej społeczności o ważnych decyzjach administracyjnych, planowanych inwestycjach i zmianach dotyczących naszej okolicy.</li>
+          <li>Wspieranie mieszkańców w korzystaniu z prawa do informacji, udziału w konsultacjach społecznych i postępowaniach administracyjnych.</li>
+          <li>Ochrona dziedzictwa przyrodniczego i kulturowego gminy Łęki Szlacheckie.</li>
+          <li>Prowadzenie rzeczowego dialogu z władzami samorządowymi, instytucjami i inwestorami.</li>
+        </ul>
+
+        <h4>Chcemy działać wspólnie z mieszkańcami</h4>
+        <p>Wierzymy, że każdy mieszkaniec powinien mieć możliwość wyrażenia swojego zdania w sprawach dotyczących środowiska i przyszłości naszej gminy.</p>
+        <p>Zależy nam na rzetelnej informacji, przejrzystości podejmowanych decyzji oraz poszanowaniu głosu lokalnej społeczności.</p>
+        <p>Na tej stronie będziemy informować o naszych działaniach, ważnych sprawach dotyczących gminy oraz możliwościach zaangażowania się mieszkańców.</p>
+        <p>Zapraszamy do obserwowania strony, dzielenia się opiniami i wspólnego działania!</p>
+
+        <p class="motto">Nasza gmina. Nasze środowisko. Nasza przyszłość. Nasze jutro.</p>
+        <p class="sign">Stowarzyszenie Ochrony Środowiska i Dziedzictwa Gminy Łęki Szlacheckie</p>
+      </article>
+      <div class="empty">
+        <a class="btn" href="https://www.facebook.com/profile.php?id=61596613078282" rel="noopener">Więcej na naszym profilu na Facebooku</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="wrap contact">
+      <div>
+        <h2>Kontakt</h2>
+        <p>Chcesz do nas dołączyć, zgłosić pomysł albo zapytać o nasze działania? Zadzwoń, napisz e-mail lub odezwij się na Facebooku.</p>
+        <a class="btn" href="https://www.facebook.com/profile.php?id=61596613078282" rel="noopener">Napisz na Facebooku</a>
+      </div>
+      <dl>
+        <dt>Stowarzyszenie</dt>
+        <dd>Stowarzyszenie Ochrony Środowiska i Dziedzictwa Gminy Łęki Szlacheckie</dd>
+        <dt>Telefon</dt>
+        <dd><a href="tel:+48697860760">+48 697 860 760</a><br><a href="tel:+48663433240">+48 663 433 240</a></dd>
+        <dt>Adres</dt>
+        <dd>Piwaki 49A<br>Łęki Szlacheckie<br>97-352</dd>
+        <dt>E-mail</dt>
+        <dd><a href="mailto:kontakt@naszejutro.pl">kontakt@naszejutro.pl</a></dd>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    © <span id="rok">2026</span> Stowarzyszenie Ochrony Środowiska i Dziedzictwa Gminy Łęki Szlacheckie ·
+    <a href="https://www.facebook.com/profile.php?id=61596613078282" rel="noopener">Facebook</a>
+  </div>
+</footer>
+<script>document.getElementById('rok').textContent=new Date().getFullYear()</script>
+</body>
+</html>
